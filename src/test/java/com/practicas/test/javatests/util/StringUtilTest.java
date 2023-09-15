@@ -38,7 +38,7 @@ public class StringUtilTest {
         });
 
         String expected = "negative times not allowed";
-        /// Luego si volvemos a usar el 'assertEquals' 
+        /// Luego si volvemos a usar el 'assertEquals'
         assertEquals(expected,exception.getMessage());
 
     }
