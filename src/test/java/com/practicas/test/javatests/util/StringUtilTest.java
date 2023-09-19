@@ -3,8 +3,7 @@ package com.practicas.test.javatests.util;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StringUtilTest {
 
@@ -51,7 +50,27 @@ public class StringUtilTest {
         assertEquals("hola",StringUtil.repeat("hola",1) );
     }
 
+    @Test
+    void string_not_is_empty() {
 
+        assertFalse(StringUtil.isEmpty("1"));
+    }
 
+    @Test
+    void string_is_empty() {
 
+        assertTrue(StringUtil.isEmpty(""));
+    }
+
+    @Test
+    void string_null_is_empty() {
+
+        assertTrue(StringUtil.isEmpty(null));
+    }
+
+    @Test
+    void string_with_spaces_is_empty() {
+
+        assertTrue(StringUtil.isEmpty("     "));
+    }
 }
