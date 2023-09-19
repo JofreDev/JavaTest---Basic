@@ -3,8 +3,8 @@ package com.practicas.test.javatests.util;
 import org.junit.jupiter.api.Test;
 
 // Bibliotecas para el uso de assertThat
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.CoreMatchers.*;
+    import static org.hamcrest.MatcherAssert.assertThat;
+    import static org.hamcrest.CoreMatchers.*;
 
 class DateUtilTest {
 
