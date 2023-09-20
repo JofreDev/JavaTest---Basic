@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.util.Collection;
+import java.util.Objects;
 
 public class MovieRepositoryJdbc implements MovieRepository {
 
@@ -23,7 +24,9 @@ public class MovieRepositoryJdbc implements MovieRepository {
 
     @Override
     public Movie findById(long id) {
-        return null;
+        /// Solo devuelve un obj
+        Object[] args = {id};
+        return jdbcTemplate.queryForObject("select * from movies where id = ?", args, movieMapper);
     }
 
     @Override
@@ -35,6 +38,8 @@ public class MovieRepositoryJdbc implements MovieRepository {
     @Override
     public void saveOrUpdate(Movie movie) {
 
+        jdbcTemplate.update("insert into movies (name, minutes,genre) values(?,?,?)",
+                movie.getName(), movie.getMinutes(), movie.getGenre().toString() );
     }
 
 
